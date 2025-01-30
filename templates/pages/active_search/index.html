@@ -1,0 +1,37 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Active Search{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <h3 class="flex">
+            Search Contacts
+            <span class="htmx-indicator ml-4 text-base text-green-600 flex gap-2">
+                <img src="/assets/img/bars.svg" />Searching...
+            </span>
+        </h3>
+        <input
+            type="search"
+            name="search"
+            placeholder="Begin Typing To Search Users..."
+            hx-post="{{target}}"
+            hx-trigger="input changed delay:500ms, keyup[key=='Enter'], load"
+            hx-target="#search-results"
+            hx-indicator=".htmx-indicator"
+            class="w-80"
+        />
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="search-results"></tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

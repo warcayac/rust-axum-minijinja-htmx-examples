@@ -1,0 +1,9 @@
+{% set color = "color:" ~ random_color() %}
+<div 
+    id="color-demo" 
+    class="smooth text-xl" 
+    style="{{ color }};"
+    hx-get="{{target}}"
+    hx-swap="outerHTML" 
+    hx-trigger="every 1s"
+>Color Swap Demo</div>

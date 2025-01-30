@@ -1,0 +1,16 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Keyboard Shortcuts{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <button 
+            hx-trigger="click, keyup[altKey&&shiftKey&&key=='D'] from:body"
+            hx-post="{{target}}"
+            class="btn primary text-3xl"
+        >Do It! (alt-shift-D)</button>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% set table_attribs = table_attribs | default("") %}
+{% set tbody_attribs = tbody_attribs | default({}) %}
+<h2>Contacts</h2>
+<table {{ table_attribs }}>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody 
+        id="contacts-table" 
+        {% for key in tbody_attribs %}{{ key }}="{{ tbody_attribs[key] }}" {% endfor %}
+    >
+        {% include "pages/update_other_content/partials/rows_1.html" %}
+        <tr id="swaprow" style="display: none"></tr>
+    </tbody>
+</table>

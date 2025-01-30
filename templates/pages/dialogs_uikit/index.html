@@ -1,0 +1,24 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Dialogs UIKit{% endblock %}
+
+{% block content %}
+<style>
+    @import "https://cdn.jsdelivr.net/npm/uikit@3.22.0/dist/css/uikit.min.css";
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <button 
+            id="showButton"
+            hx-get="{{target}}"
+            hx-target="#modals-here" 
+            hx-trigger="click"
+            class="uk-button uk-button-primary" 
+            _="on htmx:afterOnLoad wait 10ms then add .uk-open to #modal"
+        >Show Modal Dialog</button>
+        <div id="modals-here"></div>
+    </div>
+</div>
+{% endblock %}

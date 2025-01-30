@@ -1,0 +1,16 @@
+<div class="tab-list" role="tablist">
+    {% for i in [1,2,3] %}
+        {% set selected = active_tab == i %}
+        <button
+            hx-get="{{ target ~ i }}"
+            role="tab"
+            aria-controls="tab-content"
+            aria-selected="{{selected}}"
+            {% if selected %}
+                class="selected"
+                {# autofocus #}
+            {% endif %}
+        >Tab {{i}}</button>
+    {% endfor %}
+</div>
+<div id="tab-content" role="tabpanel" class="tab-content">{{ content }}</div>

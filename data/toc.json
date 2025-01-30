@@ -1,0 +1,142 @@
+[
+    {
+        "label": "Click To Edit",
+        "link": "/click-to-edit",
+        "description": "Demonstrates inline editing of a data object"
+    },
+    {
+        "label": "Bulk Update",
+        "link": "/bulk-update",
+        "description": "Demonstrates bulk updating of multiple rows of data"
+    },
+    {
+        "label": "Click To Load",
+        "link": "/click-to-load",
+        "description": "Demonstrates clicking to load more rows in a table"
+    },
+    {
+        "label": "Delete Row",
+        "link": "/delete-row",
+        "description": "Demonstrates row deletion in a table"
+    },
+    {
+        "label": "Edit Row",
+        "link": "/edit-row",
+        "description": "Demonstrates how to edit rows in a table"
+    },
+    {
+        "label": "Lazy Loading",
+        "link": "/lazy-load",
+        "description": "Demonstrates how to lazy load content"
+    },
+    {
+        "label": "Inline Validation",
+        "link": "/inline-validation",
+        "description": "Demonstrates how to do inline field validation"
+    },
+    {
+        "label": "Infinite Scroll",
+        "link": "/infinite-scroll",
+        "description": "Demonstrates infinite scrolling of a page"
+    },
+    {
+        "label": "Active Search",
+        "link": "/active-search",
+        "description": "Demonstrates the active search box pattern"
+    },
+    {
+        "label": "Progress Bar",
+        "link": "/progress-bar",
+        "description": "Demonstrates a job-runner like progress bar"
+    },
+    {
+        "label": "Value Select",
+        "link": "/value-select",
+        "description": "Demonstrates making the values of a select dependent on another select"
+    },
+    {
+        "label": "Animations",
+        "link": "/animations",
+        "description": "Demonstrates various animation techniques"
+    },
+    {
+        "label": "File Upload",
+        "link": "/file-upload",
+        "description": "Demonstrates how to upload a file via ajax with a progress bar"
+    },
+    {
+        "label": "Preserving File Inputs after Form Errors",
+        "link": "/file-upload-input",
+        "description": "Demonstrates how to preserve file inputs after form errors"
+    },
+    {
+        "label": "Reset User Input",
+        "link": "/reset-user-input",
+        "description": "Demonstrates how to reset form inputs after submission"
+    },
+    {
+        "label": "Dialogs - Browser",
+        "link": "/dialogs",
+        "description": "Demonstrates the prompt and confirm dialogs"
+    },
+    {
+        "label": "Dialogs - UIKit",
+        "link": "/modal-uikit",
+        "description": "Demonstrates modal dialogs using UIKit"
+    },
+    {
+        "label": "Dialogs - Bootstrap",
+        "link": "/modal-bootstrap",
+        "description": "Demonstrates modal dialogs using Bootstrap"
+    },
+    {
+        "label": "Dialogs - Custom",
+        "link": "/modal-custom",
+        "description": "Demonstrates modal dialogs from scratch"
+    },
+    {
+        "label": "Tabs (Using HATEOAS)",
+        "link": "/tabs-hateoas",
+        "description": "Demonstrates how to display and select tabs using HATEOAS principles"
+    },
+    {
+        "label": "Tabs (Using JavaScript)",
+        "link": "/tabs-javascript",
+        "description": "Demonstrates how to display and select tabs using JavaScript"
+    },
+    {
+        "label": "Keyboard Shortcuts",
+        "link": "/keyboard-shortcuts",
+        "description": "Demonstrates how to create keyboard shortcuts for htmx enabled elements"
+    },
+    {
+        "label": "Drag & Drop / Sortable",
+        "link": "/sortable",
+        "description": "Demonstrates how to use htmx with the Sortable.js plugin to implement drag-and-drop reordering"
+    },
+    {
+        "label": "Updating Other Content",
+        "link": "/update-other-content",
+        "description": "Demonstrates how to update content beyond just the target elements"
+    },
+    {
+        "label": "Confirm",
+        "link": "/confirm",
+        "description": "Demonstrates how to implement a custom confirmation dialog with htmx"
+    },
+    {
+        "label": "Async Authentication",
+        "link": "/async-auth",
+        "description": "Demonstrates how to handle async authentication tokens in htmx"
+    },
+    {
+        "label": "Web Components",
+        "link": "/web-components",
+        "description": "Demonstrates how to integrate htmx with web components and shadow DOM"
+    },
+    {
+        "label": "(Experimental) moveBefore()-powered hx-preserve",
+        "link": "/move-before",
+        "description": "htmx will use the experimental moveBefore() API for moving elements, if it is present."
+    }
+]

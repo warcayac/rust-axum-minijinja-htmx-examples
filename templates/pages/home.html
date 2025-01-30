@@ -1,0 +1,26 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+
+{% block content %}
+<h1>UI Examples</h1>
+<p class="pb-5">Below are a set of UX patterns implemented in htmx with minimal HTML and styling.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Pattern</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in toc %}
+            <tr>
+                <td>
+                    <a href="{{ item.link }}" class="no-underline text-[#5b96d5] cursor-pointer"
+                    > {{ item.label }} </a></td>
+                <td>{{ item.description }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

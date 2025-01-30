@@ -1,0 +1,26 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ A Customized Confirmation UI ~ Example 1{% endblock %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <button 
+            hx-get="{{target}}"
+            hx-trigger='confirmed' 
+            _="on click
+                call Swal.fire({title: 'Confirm', text:'Do you want to continue?'})
+                if result.isConfirmed trigger confirmed
+            "
+            class="btn primary text-2xl"
+        >Click Me</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block more_footer_links %}
+    <li><a href="{{back_menu}}" class="me-4 md:me-6">Back</a></li>
+{% endblock %}

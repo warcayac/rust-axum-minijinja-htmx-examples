@@ -1,0 +1,335 @@
+[
+    {
+        "alias": "click2edit",
+        "base": "/click-to-edit",
+        "paths": [
+            {
+                "name": "/contact/1",
+                "options": ["edit"]
+            }
+        ]
+    },
+    {
+        "alias": "bulkupdate",
+        "base": "/bulk-update",
+        "paths": [
+            {
+                "name": "/users",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "click2load",
+        "base": "/click-to-load",
+        "paths": [
+            {
+                "name": "/contacts",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "deleterow",
+        "base": "/delete-row",
+        "paths": [
+            {
+                "name": "/contact",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "editrow",
+        "base": "/edit-row",
+        "paths": [
+            {
+                "name": "/contact",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "lazyload",
+        "base": "/lazy-load",
+        "paths": [
+            {
+                "name": "/graph",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "inlineval",
+        "base": "/inline-validation",
+        "paths": [
+            {
+                "name": "/contact",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "infinitescroll",
+        "base": "/infinite-scroll",
+        "paths": [
+            {
+                "name": "/contacts",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "activesearch",
+        "base": "/active-search",
+        "paths": [
+            {
+                "name": "/search",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "progressbar",
+        "base": "/progress-bar",
+        "paths": [
+            {
+                "name": "/job",
+                "options": ["progress"]
+            },
+            {
+                "name": "/start",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "valueselect",
+        "base": "/value-select",
+        "paths": [
+            {
+                "name": "/models",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "animations",
+        "base": "/animations",
+        "paths": [
+            {
+                "name": "/color-throb",
+                "options": ["colors"]
+            },
+            {
+                "name": "/fade-out-on-swap",
+                "options": ["fade_out_demo"]
+            },
+            {
+                "name": "/fade-in-on-addition",
+                "options": ["fade_in_demo"]
+            },
+            {
+                "name": "/request-in-flight-animation",
+                "options": ["name"]
+            },
+            {
+                "name": "/using-class-tools-extension",
+                "options": []
+            },
+            {
+                "name": "/using-view-transition-api",
+                "options": ["new-content","original-content"]
+            }
+        ]
+    },
+    {
+        "alias": "fileupload",
+        "base": "/file-upload",
+        "paths": [
+            {
+                "name": "/js-version",
+                "options": []
+            },
+            {
+                "name": "/hs-version",
+                "options": []
+            },
+            {
+                "name": "/upload",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "fileuploadinput",
+        "base": "/file-upload-input",
+        "paths": [
+            {
+                "name": "/error",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "resetuserinput",
+        "base": "/reset-user-input",
+        "paths": [
+            {
+                "name": "/note",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "dialogs",
+        "base": "/dialogs",
+        "paths": [
+            {
+                "name": "/submit",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "dialogsuikit",
+        "base": "/modal-uikit",
+        "paths": [
+            {
+                "name": "/modal",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "modalbootstrap",
+        "base": "/modal-bootstrap",
+        "paths": [
+            {
+                "name": "/modal",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "modalcustom",
+        "base": "/modal-custom",
+        "paths": [
+            {
+                "name": "/modal",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "tabshateoas",
+        "base": "/tabs-hateoas",
+        "paths": [
+            {
+                "name": "/tab",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "tabsjavascript",
+        "base": "/tabs-javascript",
+        "paths": [
+            {
+                "name": "/tab",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "kbshortcuts",
+        "base": "/keyboard-shortcuts",
+        "paths": [
+            {
+                "name": "/doit",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "sortable",
+        "base": "/sortable",
+        "paths": [
+            {
+                "name": "/items",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "updateother",
+        "base": "/update-other-content",
+        "paths": [
+            {
+                "name": "/solution-1",
+                "options": ["contacts"]
+            },{
+                "name": "/solution-2",
+                "options": ["contacts"]
+            },{
+                "name": "/solution-3",
+                "options": ["contacts", "contacts/table"]
+            },{
+                "name": "/solution-4",
+                "options": ["contacts", "contacts/table"]
+            }
+        ]
+    },
+    {
+        "alias": "confirm",
+        "base": "/confirm",
+        "paths": [
+            {
+                "name": "/example1",
+                "options": []
+            },
+            {
+                "name": "/example2",
+                "options": []
+            },
+            {
+                "name": "/confirmed",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "asyncauth",
+        "base": "/async-auth",
+        "paths": [
+            {
+                "name": "/example",
+                "options": []
+            },
+            {
+                "name": "/auth",
+                "options": ["token"]
+            }
+        ]
+    },
+    {
+        "alias": "webcomponents",
+        "base": "/web-components",
+        "paths": [
+            {
+                "name": "/my-component-clicked",
+                "options": []
+            }
+        ]
+    },
+    {
+        "alias": "movebefore",
+        "base": "/move-before",
+        "paths": [
+            {
+                "name": "/details",
+                "options": []
+            }
+        ]
+    }
+]

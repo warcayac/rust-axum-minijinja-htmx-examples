@@ -1,0 +1,35 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Tabs (Using HATEOAS){% endblock %}
+
+{% block content %}
+<style>
+    #tabs > .tab-list {
+        border-bottom: solid 3px #eee;
+    }
+    #tabs > .tab-list button.selected {
+        border: solid 3px #80d9df;
+        background-color: #bedf80;
+    }
+    #tabs > .tab-list button {
+        border: none;
+        display: inline-block;
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <div 
+            id="tabs" 
+            hx-get="{{target}}"
+            hx-trigger="load delay:100ms" 
+            hx-target="#tabs" 
+            hx-swap="innerHTML"
+        ></div>
+    </div>
+</div>
+{% endblock %}

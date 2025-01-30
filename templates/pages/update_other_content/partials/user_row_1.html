@@ -1,0 +1,8 @@
+{% set tr_attribs = tr_attribs | default("") %}
+<tr {{ tr_attribs }}>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td class="text-center">
+        <button class="btn green inline">Edit</button>
+    </td>
+</tr>

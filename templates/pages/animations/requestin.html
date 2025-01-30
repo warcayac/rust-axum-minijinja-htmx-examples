@@ -1,0 +1,22 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Request In Flight Animation{% endblock %}
+
+{% block content %}
+<style>
+    form.htmx-request {
+        opacity: .5;
+        transition: opacity 300ms linear;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <form hx-post="{{target}}" hx-swap="outerHTML" class="flex items-center">
+            <label class="shrink-0 w-16">Name:</label><input name="name" placeholder="Press the button..."/><br/>
+            <button class="btn primary ml-2">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

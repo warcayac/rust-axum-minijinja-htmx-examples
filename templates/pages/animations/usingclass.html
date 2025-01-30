@@ -1,0 +1,22 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Using the htmx class-tools Extension{% endblock %}
+
+{% block content %}
+<style>
+    .demo.faded {
+        opacity:.3;
+    }
+    .demo {
+        opacity:1;
+        transition: opacity ease-in 900ms;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <div class="demo text-xl" hx-ext="class-tools" classes="toggle faded:1s">Toggle Demo</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Audi",
+        "models": ["A1", "A3", "A6"]
+    },
+    {
+        "name": "Toyota",
+        "models": ["Landcruiser", "Tacoma", "Yaris"]
+    },
+    {
+        "name": "BMW",
+        "models": ["325i", "325ix", "X5"]
+    }
+]

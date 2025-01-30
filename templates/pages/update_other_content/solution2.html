@@ -1,0 +1,21 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Updating Other Content ~ Solution 2{% endblock %}
+
+{% block content %}
+<script>
+    htmx.config.useTemplateFragments = true;
+</script>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        {% include "pages/update_other_content/partials/contacts.html" %}
+        {% include "pages/update_other_content/partials/new_contact.html" %}
+    </div>
+</div>
+{% endblock %}
+
+{% block more_footer_links %}
+    <li><a href="{{back_menu}}" class="me-4 md:me-6">Back</a></li>
+{% endblock %}

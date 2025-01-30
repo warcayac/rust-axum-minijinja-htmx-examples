@@ -1,0 +1,23 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Click to Load{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% include "pages/click_2_load/partials/rows.html" %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

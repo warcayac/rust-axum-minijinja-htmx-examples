@@ -1,0 +1,19 @@
+{% for i in range(10) %}
+<tr>
+    <td>Agent Smith</td>
+    <td>void{{i+10*page}}@null.org</td>
+    <td>{{ generate_id() }}</td>
+</tr>
+{% endfor %}
+<tr id="replaceMe">
+    <td colspan="3">
+        <button 
+            class="btn primary whitespace-nowrap flex items-center gap-x-2 mx-auto"
+            hx-get="{{target}}?page={{page+1}}"
+            hx-target="#replaceMe" 
+            hx-swap="outerHTML"
+        >
+            Load More Agents... <img class="htmx-indicator" src="/assets/img/bars.svg"/>
+        </button>
+    </td>
+</tr>

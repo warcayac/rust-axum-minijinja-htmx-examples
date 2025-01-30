@@ -1,0 +1,12 @@
+<tr hx-trigger="cancel" class="editing" hx-get="{{target}}/{user.id}">
+    <td><input name="name" value="{{user.name}}" class="inline"/></td>
+    <td><input name="email" value="{{user.email}}" class="inline"/></td>
+    <td class="flex mx-auto items-center gap-x-1">
+        <button class="btn danger inline" hx-get="{{target}}/{{user.id}}">
+            Cancel
+        </button>
+        <button class="btn primary inline" hx-put="{{target}}/{{user.id}}" hx-include="closest tr">
+            Save
+        </button>
+    </td>
+</tr>

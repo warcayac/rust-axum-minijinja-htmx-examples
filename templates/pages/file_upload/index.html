@@ -1,0 +1,15 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ File Upload{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <ul class="list-disc ml-5">
+            <li><a href="{{target1}}">Javascript version</a></li>
+            <li><a href="{{target2}}">Hyperscript version</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% macro input_edit(label, name, value) %}
+    <label class="block mb-2">
+        <span class="font-semibold">{{ label }}</span>
+        <input
+            type="text"
+            name="{{ name }}"
+            value="{{ value }}"
+            class="along"
+        />
+    </label>
+{% endmacro %}

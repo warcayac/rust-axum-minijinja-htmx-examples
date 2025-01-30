@@ -1,0 +1,18 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Color Throb{% endblock %}
+
+{% block content %}
+<style>
+    .smooth {
+        transition: all 1s ease-in;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        {% include "pages/animations/partials/throb_colors.html" %}
+    </div>
+</div>
+{% endblock %}

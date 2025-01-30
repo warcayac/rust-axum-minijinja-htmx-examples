@@ -1,0 +1,25 @@
+<div 
+    id="tabs" 
+    hx-target="#tab-contents" 
+    role="tablist"
+    hx-on:htmx-after-on-load="let currentTab = document.querySelector('[aria-selected=true]');
+                            currentTab.setAttribute('aria-selected', 'false')
+                            currentTab.classList.remove('selected')
+                            let newTab = event.target
+                            newTab.setAttribute('aria-selected', 'true')
+                            newTab.classList.add('selected')"
+>
+    {% for i in [1,2,3] %}
+        {% set selected = active_tab == i %}
+        <button
+            hx-get="{{ target ~ i }}"
+            role="tab"
+            aria-controls="tab-contents"
+            aria-selected="{{selected}}"
+            {% if selected %}
+                class="selected"
+            {% endif %}
+        >Tab {{i}}</button>
+    {% endfor %}
+</div>
+<div id="tab-contents" role="tabpanel" hx-get="{{ target ~ active_tab }}" hx-trigger="load"></div>

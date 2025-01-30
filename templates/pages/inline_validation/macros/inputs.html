@@ -1,0 +1,23 @@
+{% macro input_email(target, validator=false, email="", msg="") %}
+    <div 
+        hx-target="this" 
+        hx-swap="outerHTML"
+        class="w-full flex items-center"
+    >
+        <label class="w-28 inline-block shrink-0">Email Address</label>
+        <input 
+            name="email" 
+            hx-post="{{ target }}"
+            hx-indicator="#ind" 
+            class="w-60 {% if validator %}{{ 'error' if msg else 'valid' }}{% endif %}"
+            {% if validator %}
+                value="{{ email }}"
+                aria-invalid="{{ 'true' if msg else 'false' }}" 
+            {% endif %}
+        />
+        <img id="ind" src="/assets/img/bars.svg" class="htmx-indicator ml-1"/>
+        {% if msg %}
+            <div class="error-message flex-grow break-words">{{ msg }}</div>
+        {% endif %}
+    </div>
+{% endmacro %}

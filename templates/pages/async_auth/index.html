@@ -1,0 +1,78 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Async Authentication{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <button 
+            hx-post="{{target}}" 
+            hx-target="next output"
+            class="btn primary text-xl mb-4 block"
+        >Call Protected Endpoint</button>
+        <output>--</output>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts_footer %}
+<script>
+    // Simulate auth as a promise that resolves with a token
+    const auth = new Promise((resolve) => {
+        fetch(
+            '{{ token_path | safe }}',
+            { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    client_id: 'valid_id',
+                    client_secret: 'client_secret',
+                }),
+            },
+        )
+        .then(response => response.json())
+        .then(data => {
+            console.log("Token fetched: ", data.token);
+            resolve(data.token)
+        });
+    });
+
+    // Store the auth token
+    let authToken = null;
+    auth.then((token) => {
+        authToken = token;
+        console.log("Authenticated!");
+    });
+
+    // Gate htmx requests on the auth token
+    htmx.on("htmx:confirm", (e) => {
+        console.log("htmx:confirm event triggered");
+        // if there is no auth token
+        if (authToken == null) {
+            console.log("No auth token, postponing request");
+            // stop the regular request from being issued
+            e.preventDefault();
+            // only issue it once the auth promise has resolved
+            auth.then(() => {
+                console.log("Auth token available, issuing request");
+                e.detail.issueRequest();
+            });
+        }
+    });
+
+    // Add the auth token to requests as a header
+    htmx.on("htmx:configRequest", (e) => {
+        console.log("htmx:configRequest event triggered");
+        e.detail.headers["AUTH"] = authToken;
+    });
+</script>
+{% endblock %}
+
+{#
+Cuando se está cargando esta página se hace una llamada POST a /auth/token para obtener
+un JWT válido. Este token se almacena en la variable authToken y se usa para autorizar
+las llamadas a la API protegida: /example
+#}

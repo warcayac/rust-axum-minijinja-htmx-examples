@@ -1,0 +1,13 @@
+{% import "pages/click_2_edit/macros/inputs.html" as comp1 %}
+
+
+<form hx-put="{{target}}" hx-target="this" hx-swap="outerHTML">
+    {{ comp1.input_edit("First Name", "first_name", contact.first_name) }}
+    {{ comp1.input_edit("Last Name", "last_name", contact.last_name) }}
+    {{ comp1.input_edit("Email", "email", contact.email) }}
+
+    <div class="pt-4 grid grid-cols-2 gap-2">
+        <button class="btn primary" type="submit">Submit</button>
+        <button class="btn danger" hx-get="{{ send_back }}">Cancel</button>
+    </div>
+</form>

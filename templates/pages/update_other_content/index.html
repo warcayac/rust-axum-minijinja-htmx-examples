@@ -1,0 +1,20 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Updating Other Content{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        {% include "pages/update_other_content/partials/contacts.html" %}
+        <h2>Solutions</h2>
+        <ul>
+            {% set i = 0 %}
+            {% for target in targets %}
+                {% set i = i + 1 %}
+                <li><a href={{target}}>Solution {{i}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

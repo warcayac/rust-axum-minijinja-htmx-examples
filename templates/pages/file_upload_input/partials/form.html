@@ -1,0 +1,29 @@
+{% import "macros/inputs.html" as comp %}
+  
+<form 
+    hx-post="{{target}}"
+    id="binaryForm" 
+    enctype="multipart/form-data" 
+    hx-swap="outerHTML" 
+    hx-target="#binaryForm"
+    class="mt-4"
+    >
+    <div class="mb-4">
+        <input
+            type="text"
+            name="description"
+            placeholder="Some description here"
+            class="block w-full"
+        />
+        {% if show_error %}
+            <span class="text-red-600 text-sm">This element did not preserve its value after re-rendering</span>
+        {% endif %}
+    </div>
+    {{ comp.file_input(name="binaryFile", preserve=true, required=true) }}
+    {% if show_error %}
+        <span class="text-green-600 text-sm">This element preserved its value after re-rendering</span>
+    {% endif %}
+    <div class="flex justify-center mt-6">
+        <button type="submit" class="btn primary">Submit</button>
+    </div>
+</form>

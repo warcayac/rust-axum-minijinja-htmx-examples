@@ -1,0 +1,25 @@
+{% macro task(target_job, target_progress, value=0, target_start="") %}
+    {% set state = "Complete" if value >= 100 else "Running" %}
+    {% set timer = "none" if value >= 100 else "every 600ms" %}
+    <div hx-trigger="done" hx-get={{target_job}} hx-swap="outerHTML" hx-target="this">
+        <h3 role="status" id="pblabel" tabindex="-1">{{state}}</h3>
+        <div 
+            hx-get="{{target_progress}}"
+            hx-trigger="{{timer}}"
+            hx-target="this" 
+            hx-swap="innerHTML"
+            hx-headers='{ "start_time": {{start_time}} }'
+        >
+            {% include "pages/progress_bar/partials/progress.html" %}
+        </div>
+        {% if value >= 100 %}
+        <button
+            id="restart-btn"
+            class="btn primary"
+            hx-post="{{target_start}}"
+            hx-ext="class-tools"
+            classes="add show:600ms" {# this attribute belongs to Htmx class-tools extension #}
+        >Restart Job</button>
+        {% endif %}
+    </div>    
+{% endmacro %}

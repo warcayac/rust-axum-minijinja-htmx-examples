@@ -1,0 +1,15 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ A Customized Confirmation UI{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <ul class="list-disc list-inside">
+            <li><a href="{{ target1 }}">Example 1</a></li>
+            <li><a href="{{ target2 }}">Example 2</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Web Components{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <my-component></my-component>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts_footer %}
+<script>
+    let counter = 0; // Initialize the counter on the client side
+
+    customElements.define(
+        'my-component', 
+        class MyComponent extends HTMLElement {
+            // This method runs when your custom element is added to the page
+            async connectedCallback() {
+                const root = this.attachShadow({ mode: 'closed' });
+
+                // fetch the local CSS file
+                const cssResponse = await fetch('/assets/css/style.css');
+                const cssText = await cssResponse.text();
+
+                // inject the CSS into the shadow DOM
+                root.innerHTML = `
+                    <style>
+                        ${cssText}
+                    </style>
+                    <button 
+                        hx-get="{{ target | safe }}"
+                        hx-target="next div"
+                        hx-vals='{"counter": ${counter}}'
+                        class="btn primary"
+                    >Click me!</button>
+                    <div></div>
+                `;
+
+                // Add an event listener to increment the counter before sending the request
+                root.querySelector('button').addEventListener('click', () => {
+                    counter++;
+                    root.querySelector('button').setAttribute('hx-vals', JSON.stringify({ counter }));
+                });
+
+                htmx.process(root) // Tell HTMX about this component's shadow DOM
+            }
+        }
+    )
+</script>
+{% endblock %}

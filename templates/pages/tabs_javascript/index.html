@@ -1,0 +1,34 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Tabs (Using JavaScript){% endblock %}
+
+{% block content %}
+<style>
+    #tabs {
+        margin-top: 1em;
+    }
+    #tabs {
+        border-bottom: solid 3px #eee;
+    }
+    #tab-contents {
+        padding: 10px;
+    }
+    #tabs > button {
+        border: none;
+        display: inline-block;
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+    #tabs > button.selected {
+        background-color: #eee;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        {% include "pages/tabs_javascript/partials/tabs.html" %}
+    </div>
+</div>
+{% endblock %}

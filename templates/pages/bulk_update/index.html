@@ -1,0 +1,61 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Bulk update{% endblock %}
+
+{% block content %}
+<style>
+    #toast.htmx-settling {
+        opacity: 100;
+    }
+      
+    #toast {
+        background: #E1F0DA;
+        opacity: 0;
+        transition: opacity 3s ease-out;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }    
+</style>
+<div class="flex justify-center">
+    <div class="mt-8 w-full px-8">
+        <h3>Select Rows And Activate Or Deactivate Below</h3>
+        <form id="checked-contacts"
+            hx-post="{{ target }}"
+            hx-swap="outerHTML settle:3s"
+            hx-target="#toast"
+        >
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th class="text-center">Active</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td class="text-center">
+                            <input 
+                                type="checkbox" 
+                                name="active:{{ user.email }}"
+                                {% if user.active %}checked{% endif %}
+                            >
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="mt-8 flex justify-center">
+                <button type="submit" class="btn primary">Bulk Update</button>
+            </div>
+            <span id="toast"></span>
+        </form>
+    </div>    
+</div>
+{% endblock %}

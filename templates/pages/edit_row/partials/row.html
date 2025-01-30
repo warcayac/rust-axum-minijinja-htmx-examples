@@ -1,0 +1,34 @@
+<tr>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td class="text-center">
+        <button 
+            class="btn green inline"
+            hx-get="{{target}}/{{user.id}}/edit"
+            hx-trigger="edit"
+            onclick="
+                let editing = document.querySelector('.editing')
+                if(editing) {
+                Swal
+                    .fire({
+                    title: 'Already Editing',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yep, Edit This Row!',
+                    text:'Hey!  You are already editing a row!  Do you want to cancel that edit and continue?',
+                    position: 'center',
+                    icon: 'warning',
+                    })
+                    .then((result) => {
+                    if(result.isConfirmed) {
+                        htmx.trigger(editing, 'cancel')
+                        htmx.trigger(this, 'edit')
+                    }
+                    })
+                ;
+                } else {
+                    htmx.trigger(this, 'edit');
+                }
+            "
+        >Edit</button>
+    </td>
+</tr>

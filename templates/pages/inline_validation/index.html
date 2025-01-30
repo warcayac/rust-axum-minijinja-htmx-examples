@@ -1,0 +1,45 @@
+{% import "pages/inline_validation/macros/inputs.html" as comp %}
+
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Inline Validation{% endblock %}
+
+{% block content %}
+<style>
+    .error-message {
+        color: red;
+        font-size: small;
+        line-height: 1rem;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]).error {
+        border: 1px solid rgba(255, 0, 0, 0.5); /* Red box-shadow for errors */
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]).valid {
+        border: 1px solid #36cc00;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <h3>Signup Form</h3>
+        <p>Enter an email into the input below and on tab out it will be validated. Only "test@test.com" will pass.</p>
+        <form hx-post={{target}}>
+            <div class="my-3">
+                {{ comp.input_email(target+"/email") }}
+                <div class="w-full flex items-center">
+                    <label class="w-28 inline-block">First Name</label>
+                    <input type="text" name="first_name" class="w-60"/>
+                </div>
+                <div class="w-full flex items-center">
+                    <label class="w-28 inline-block">Last Name</label>
+                    <input type="text" name="last_name" class="w-60"/>
+                </div>
+            </div>
+            <button class="btn primary" disabled>Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

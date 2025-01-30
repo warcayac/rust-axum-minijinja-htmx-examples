@@ -1,0 +1,22 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Fade In On Addition{% endblock %}
+
+{% block content %}
+<style>
+    #fade-me-in.htmx-added {
+        opacity: 0;
+    }
+    #fade-me-in {
+        opacity: 1;
+        transition: opacity 1s ease-out;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        {% include "pages/animations/partials/fadein_demo.html" %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+<div class="htmx-indicator" style="cursor: default">Updating...</div>
+{% for i in items %}
+    <div 
+        class="border border-gray-300 p-3 m-2 w-[200px] cursor-grab"
+        ondrag="this.style.cursor = 'grabbing'"
+    >
+        <input type="hidden" name="item" value={{i}}/>
+        Item {{i}}
+    </div>
+{% endfor %}

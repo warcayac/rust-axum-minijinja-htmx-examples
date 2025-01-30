@@ -1,0 +1,37 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Experimental moveBefore() Support{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <h1>Experimental moveBefore() Support</h1>
+        <h2>Demo</h2>
+        <p>Note that the video kept playing, despite the fact it is now a child of a <code>figure</code> element.  And you can click back and the video should continue to work as well.  I enjoy flipping back and forth.</p>
+        <h2>Berserk</h2>
+        <div class="flex flex-col items-center">
+            <figure class="flex flex-col items-center mb-4">
+                <iframe 
+                    hx-preserve="true" 
+                    id="berserk" 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/pOXMt5O4Ly4?si=EvSixPxT8g_us6um" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                ></iframe>
+                <figcaption class="italic">Berserk (1997) Opening</figcaption>
+            </figure>
+            <p><i><b>Berserk</b></i><span style="font-weight: normal"> (<a href="https://en.wikipedia.org/wiki/Japanese_language" title="Japanese language">Japanese</a>: <span lang="ja">ベルセルク</span>, <a href="https://en.wikipedia.org/wiki/Hepburn_romanization" title="Hepburn romanization">Hepburn</a>: <span title="Hepburn transliteration"><i lang="ja-Latn">Beruseruku</i></span>)</span> is a Japanese <a href="https://en.wikipedia.org/wiki/Manga" title="Manga">manga</a> series written and illustrated by <a href="https://en.wikipedia.org/wiki/Kentaro_Miura" title="Kentaro Miura">Kentaro Miura</a>. Set in a <a href="https://en.wikipedia.org/wiki/Middle_Ages" title="Middle Ages">medieval Europe</a>–inspired <a href="https://en.wikipedia.org/wiki/Dark_fantasy" title="Dark fantasy">dark fantasy</a> world, the story centers on the characters of <a href="https://en.wikipedia.org/wiki/Guts_(Berserk)" title="Guts (Berserk)">Guts</a>, a lone <a href="https://en.wikipedia.org/wiki/Swordsman" class="mw-redirect" title="Swordsman">swordsman</a>, and <a href="https://en.wikipedia.org/wiki/Griffith_(Berserk)" title="Griffith (Berserk)">Griffith</a>, the leader of a <a href="https://en.wikipedia.org/wiki/Mercenary" title="Mercenary">mercenary</a> band called the "Band of the Hawk". The series follows Guts' journey seeking revenge on Griffith, who betrayed him and sacrificed his comrades to become a powerful demonic being.
+            </p>            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block more_footer_links %}
+    <li><a href="#" onclick="history.back(); return false;" class="me-4 md:me-6">Back</a></li>
+{% endblock %}

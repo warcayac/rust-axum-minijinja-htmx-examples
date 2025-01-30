@@ -1,0 +1,24 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Value Select{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <div class="flex items-center">
+            <label class="w-14 inline-block">Make</label>
+            <select name="make" hx-get="{{target}}" hx-target="#models" hx-indicator=".htmx-indicator">
+                <option hidden disabled selected></option>
+                {% include "pages/value_select/partials/options.html" %}
+            </select>
+        </div>
+        <div class="flex items-center">
+            <label class="w-14 inline-block">Model</label>
+            <select id="models" name="model">
+            </select>
+            <img class="htmx-indicator ml-2" width="20" src="/assets/img/bars.svg" />
+        </div>
+    </div>
+</div>
+{% endblock %}

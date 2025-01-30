@@ -1,0 +1,34 @@
+{% import "macros/inputs.html" as comp %}
+
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ File Upload ~ Javascript version{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <form id="form" hx-encoding="multipart/form-data" hx-post="{{target}}">
+            {{ comp.file_input("file", file_exts) }}
+            <div class="p-4 w-full mt-6">
+                <div class="flex justify-center">
+                    <button class="btn primary mb-2">Upload</button>
+                </div>
+                <progress id="progress" value="0" max="100"></progress>    
+            </div>
+        </form>
+        
+        <script>
+            htmx.on(
+                '#form',
+                'htmx:xhr:progress', 
+                function(evt) {
+                    htmx
+                        .find('#progress')
+                        .setAttribute('value', evt.detail.loaded/evt.detail.total * 100)
+                }
+            );
+        </script>
+    </div>
+</div>
+{% endblock %}

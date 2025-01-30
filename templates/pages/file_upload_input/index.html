@@ -1,0 +1,12 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Preserving File Inputs after Form Errors{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        {% include "pages/file_upload_input/partials/form.html" %}
+    </div>
+</div>
+{% endblock %}

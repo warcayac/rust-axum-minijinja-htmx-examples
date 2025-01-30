@@ -1,0 +1,39 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Reset User Input{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <p class="mb-4">If you type any word contaning the word <strong>error</strong> in the input below, you will get a 400 error and the input content won't be reset.
+        </p>
+        <form
+            hx-post="{{target}}"
+            hx-target="#notes"
+            hx-swap="afterbegin"
+            hx-on::after-request="if(event.detail.successful) this.reset()"
+        >
+            <div>
+                <label>Add a note</label>
+                <input type="text" name="note-text" placeholder="blank canvas"/>
+            </div>
+            <button class="btn primary mt-4">Add</button>
+        </form>
+        <ul id="notes" class="list-disc ml-5"></ul>
+    </div>
+</div>
+{% endblock %}
+
+{# 
+if(event.detail.successful) this.reset():
+-----------------------------------------
+- This is the JavaScript code that runs when the "after-request" event is triggered.
+
+- "event.detail.successful" is a property provided by HTMX in the event object. It is a boolean value 
+  that indicates whether the request was successful (i.e., the server responded with a success status 
+  code, like 200).
+
+- "this.reset()" is a JavaScript method that resets the form to its initial state, clearing all input 
+  fields. The this keyword refers to the form element itself.
+#}

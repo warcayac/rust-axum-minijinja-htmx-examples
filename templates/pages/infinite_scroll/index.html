@@ -1,0 +1,26 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Infinite Scroll{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <table hx-indicator=".htmx-indicator">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% include "pages/infinite_scroll/partials/rows.html" %}
+            </tbody>
+        </table>
+        <div style="text-align: center">
+            <img class="htmx-indicator" width="60" src="/assets/img/bars.svg" />
+        </div>
+    </div>
+</div>
+{% endblock %}

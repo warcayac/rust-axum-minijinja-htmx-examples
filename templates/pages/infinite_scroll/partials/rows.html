@@ -1,0 +1,13 @@
+{% set psize = 19 %}
+{% for i in range(psize) %}
+<tr>
+    <td>Agent Smith</td>
+    <td>void{{i+10*page}}@null.org</td>
+    <td>{{ generate_id() }}</td>
+</tr>
+{% endfor %}
+<tr hx-get="{{ target }}?page={{ page+1 }}" hx-trigger="revealed" hx-swap="afterend">
+    <td>Agent Smith</td>
+    <td>void{{ psize + 10*page }}@null.org</td>
+    <td>{{ generate_id() }}</td>
+</tr>

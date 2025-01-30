@@ -1,0 +1,18 @@
+{% set form_attribs = form_attribs | default("") %}
+<h2>Add a Contact</h2>
+<form hx-post="{{target}}" _="on htmx:afterRequest reset() me" {{ form_attribs }}>
+    <div class="flex flex-row w-full">
+        <label>
+            Name
+            <input name="name" type="text" required />
+        </label>
+        <div class="flex-grow"></div>
+        <label>
+            Email
+            <input name="email" type="email" required />
+        </label>
+    </div>
+    <div class="mt-3">
+        <input type="submit" class="btn primary"/>
+    </div>
+</form>

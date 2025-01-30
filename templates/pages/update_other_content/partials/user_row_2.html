@@ -1,0 +1,8 @@
+{# 
+    Es necesario encerrar el componente Row con el elemento TBODY, para que la fila
+    se agregue a la tabla como tal, caso contrario el elemento TR es eliminado. 
+    Véase: https://github.com/bigskysoftware/htmx/issues/2364 
+#}
+<tbody hx-swap-oob="beforebegin:#swaprow">
+    {% include "pages/update_other_content/partials/user_row_1.html" %}
+</tbody>

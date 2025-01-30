@@ -1,0 +1,24 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ File Upload ~ Hyperscript version{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <form 
+            hx-encoding="multipart/form-data"
+            hx-post="{{target}}"
+            _="on htmx:xhr:progress(loaded, total) set #progress.value to (loaded/total)*100"
+        >
+            {{ comp.file_input("file", file_exts) }}
+            <div class="p-4 w-full mt-6">
+                <div class="flex justify-center">
+                    <button class="btn primary mb-2">Upload</button>
+                </div>
+                <progress id="progress" value="0" max="100"></progress>    
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

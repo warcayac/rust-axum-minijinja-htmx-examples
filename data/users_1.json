@@ -1,0 +1,26 @@
+[
+    { 
+        "id": 1, 
+        "name": "Joe Smith", 
+        "email": "joe@smith.org", 
+        "active": true 
+    },
+    {
+        "id": 2,
+        "name": "Angie MacDowell",
+        "email": "angie@macdowell.org",
+        "active": true
+    },
+    {
+        "id": 3,
+        "name": "Fuqua Tarkenton",
+        "email": "fuqua@tarkenton.org",
+        "active": true
+    },
+    { 
+        "id": 4, 
+        "name": "Kim Yee", 
+        "email": "kim@yee.org", 
+        "active": false 
+    }
+]

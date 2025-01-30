@@ -1,0 +1,23 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ A Customized Confirmation UI ~ Example 2{% endblock %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/assets/js/confirm2.js"></script>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <button 
+            hx-get="{{target}}"
+            hx-confirm="Some confirm text here"
+            class="btn primary text-2xl"
+        >Click Me</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block more_footer_links %}
+    <li><a href="{{back_menu}}" class="me-4 md:me-6">Back</a></li>
+{% endblock %}

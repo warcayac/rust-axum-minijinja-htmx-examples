@@ -1,0 +1,17 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Sortable{% endblock %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script src="/assets/js/sortable.js"></script>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <form class="sortable" hx-post={{target}} hx-trigger="end">
+            {% include "pages/sortable/partials/items.html" %}
+        </form>
+    </div>
+</div>
+{% endblock %}

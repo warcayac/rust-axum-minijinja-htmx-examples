@@ -1,0 +1,21 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Dialogs{% endblock %}
+
+{% block content %}
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <button 
+            class="btn primary"
+            hx-post="{{target}}"
+            hx-prompt="Enter a string"
+            hx-confirm="Are you sure?"
+            hx-target="#response"
+        >
+            Prompt Submission
+        </button>
+        <div id="response" style="padding:0px;"></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ Fade Out On Swap{% endblock %}
+
+{% block content %}
+<style>
+    .fade-me-out.htmx-swapping {
+        opacity: 0;
+        transition: opacity 1s ease-out;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div class="mt-8 w-full">
+        <button 
+            class="btn primary fade-me-out"
+            hx-delete="{{target}}"
+            hx-swap="outerHTML swap:1s"
+        >Fade Me Out</button>
+    </div>
+</div>
+{% endblock %}

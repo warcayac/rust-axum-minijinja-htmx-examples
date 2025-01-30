@@ -1,0 +1,21 @@
+<!-- prettier-ignore -->
+{% extends "layouts/layout.html" %}
+
+{% block title %}{{ super() }} ~ lazy Loading{% endblock %}
+
+{% block content %}
+<style>
+    .htmx-settling img {
+        opacity: 0;
+    }
+    img {
+        transition: opacity 300ms ease-in;
+    }
+</style>
+
+<div class="flex justify-center">
+    <div hx-get="{{target}}" hx-trigger="load" class="mt-8 w-full flex justify-center">
+        <img alt="Result loading..." class="htmx-indicator" width="150" src="/assets/img/bars.svg"/>
+    </div>
+</div>
+{% endblock %}
