@@ -1,4 +1,4 @@
-# Elysia & htmx
+# Rust - Axum - Minijinja - Htmx
 
 Reference: https://htmx.org/examples/
 
